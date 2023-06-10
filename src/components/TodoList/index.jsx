@@ -2,8 +2,7 @@ import { Col, Row, Input, Button, Select, Tag } from "antd";
 import Todo from "../Todo";
 import { useDispatch, useSelector } from "react-redux";
 
-
-import todoSlice from "./todoSlice";
+import todoSlice, { addNewTodo, addTodos } from "./todoSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import {
@@ -29,11 +28,22 @@ export default function TodoList() {
       //   priority: priority,
       //   completed: false,
       // })
-      todoSlice.actions.addTodo({
-        id: uuidv4(),
+      // todoSlice.actions.addTodo({
+      //   id: uuidv4(),
+      //   name: todoName,
+      //   priority: priority,
+      //   completed: false,
+      // })
+      // addTodos({
+      //   id: uuidv4(),
+      //   name: todoName,
+      //   priority: priority,
+      //   completed: false,
+      // })
+      addNewTodo({
         name: todoName,
-        priority: priority,
         completed: false,
+        priority: priority
       })
     );
 
